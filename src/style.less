@@ -1,0 +1,285 @@
+@import '@/assets/style/index.less';
+
+.ant-btn {
+  span+i {
+    margin-left: 4px;
+  }
+
+  i+span {
+    margin-left: 4px;
+  }
+}
+
+body {
+  background: #f5f5f5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+.ant-layout {
+  transition: all 0.2s;
+
+  &-header {
+    background: none;
+    padding   : 0 24px;
+
+    .page-info {
+      display    : flex;
+      align-items: center;
+
+      i {
+        width        : 40px;
+        height       : 40px;
+        line-height  : 40px;
+        text-align   : center;
+        background   : fade(@primary-color, 15%);
+        color        : @primary-color;
+        font-size    : 18px;
+        border-radius: 50%;
+        margin-right : 12px;
+      }
+    }
+  }
+
+  &-content {
+    padding: 24px;
+  }
+}
+
+.layout-sider-header {
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+  background     : white;
+  margin-bottom  : 16px;
+  padding        : 16px;
+  min-height     : 80px;
+}
+
+.logo {
+  position    : relative;
+  bottom      : -4px;
+  flex        : 1;
+  white-space : nowrap;
+  transition  : all 0.2s;
+  display     : flex;
+  align-items : center;
+  margin-right: -8px;
+  opacity     : 1;
+
+  &-collapsed {
+    position: absolute;
+    top     : 16px;
+    left    : -256px;
+    opacity : 0;
+  }
+
+  i {
+    display     : block;
+    color       : @primary-color;
+    font-size   : 40px;
+    margin-right: 4px;
+    line-height : 1;
+    position    : relative;
+    top         : -3px;
+  }
+
+  h4 {
+    font-size  : 18px;
+    margin     : 0;
+    line-height: 1;
+  }
+
+  span {
+    display         : block;
+    font-size       : 12px;
+    color           : @text-color-secondary;
+    text-transform  : uppercase;
+    transform       : scale(0.75);
+    transform-origin: left;
+  }
+}
+
+.ant-layout-sider-children {
+  display       : flex;
+  flex-direction: column;
+
+  >.ant-menu {
+    flex      : 1;
+    height    : 100%;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.ant-menu {
+  &-item-icon i {
+    vertical-align: -0.15em;
+  }
+
+  .ant-menu-item {
+    &.ant-menu-item-selected {
+      background: @primary-color;
+      color     : white;
+
+      a {
+        color: white;
+      }
+    }
+  }
+}
+
+.page {
+  .ant-page-header {
+    margin-bottom: 16px;
+  }
+
+  .ant-page-header-content:only-child {
+    padding-top: 0;
+  }
+
+  .ant-form {
+    &.ant-form-inline {
+      .ant-form-item {
+        margin-bottom: 16px;
+      }
+
+      .ant-select {
+        min-width: 120px;
+      }
+    }
+  }
+}
+
+.ant-card-head {
+  border-bottom: 0;
+  font-weight  : normal;
+
+  &-title,
+  .ant-card-extra {
+    padding-bottom: 0;
+  }
+}
+
+.add-form-page {
+  padding: 0 40px;
+}
+
+.ant-divider {
+  &-horizontal {
+    &.small {
+      margin: 16px 0;
+    }
+  }
+}
+
+.chart-card {
+  .ant-card-body {
+    padding-top: 0;
+  }
+
+  .home-statistic-echarts {
+    height     : 48px;
+    display    : flex;
+    align-items: flex-end;
+
+    >div[id*='statistic'] {
+      width : 100%;
+      height: 100%;
+    }
+  }
+
+  .ant-card-head-wrapper {
+    align-items: flex-start;
+  }
+}
+
+.ant-card-head-tabs {
+  &.ant-tabs-large>.ant-tabs-nav .ant-tabs-tab {
+    font-size: 14px;
+  }
+}
+
+.rank {
+  .ant-list-item-meta-title {
+    margin-bottom: 0;
+  }
+
+  .ant-list-item-meta-avatar {
+    span {
+      display      : block;
+      width        : 24px;
+      height       : 24px;
+      line-height  : 24px;
+      text-align   : center;
+      border-radius: 50%;
+      background   : @layout-body-background;
+      color        : @text-color;
+
+      &.active {
+        background: @layout-header-background;
+        color     : @white;
+      }
+    }
+  }
+}
+
+.home-card-echarts {
+  >div {
+    width : 100%;
+    height: 100%;
+  }
+}
+
+.BMap_Marker {
+  img {
+    width : 100%;
+    height: 100%;
+  }
+}
+
+.index-map-label {
+  position     : relative;
+  background   : white;
+  padding      : 12px 16px;
+  border-radius: 4px;
+  filter       : drop-shadow(0 4px 4px fade(black, 10%));
+
+  &::after {
+    content     : ' ';
+    position    : absolute;
+    width       : 0;
+    height      : 0;
+    border-top  : 8px solid white;
+    border-right: 12px solid transparent;
+    bottom      : -8px;
+    left        : 60px;
+    z-index     : 1;
+  }
+
+  .index-map-label__title {
+    font-size    : 14px;
+    font-weight  : 500;
+    margin-bottom: 8px;
+  }
+
+  .index-map-label__content {
+    color: fade(black, 65%);
+
+    span {
+      display     : inline-block;
+      margin-right: 12px;
+    }
+  }
+}
